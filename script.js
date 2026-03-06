@@ -149,14 +149,27 @@ animateStars();
 
 // --- Animations Toggle ---
 const animationToggle = document.getElementById('animation-toggle');
+const mobileAnimationToggle = document.getElementById('mobile-animation-toggle');
+
+function handleToggle(e) {
+    const isChecked = e.target.checked;
+
+    // Sync both toggles
+    if (animationToggle) animationToggle.checked = isChecked;
+    if (mobileAnimationToggle) mobileAnimationToggle.checked = isChecked;
+
+    if (isChecked) {
+        document.body.classList.remove('animations-disabled');
+    } else {
+        document.body.classList.add('animations-disabled');
+    }
+}
+
 if (animationToggle) {
-    animationToggle.addEventListener('change', (e) => {
-        if (e.target.checked) {
-            document.body.classList.remove('animations-disabled');
-        } else {
-            document.body.classList.add('animations-disabled');
-        }
-    });
+    animationToggle.addEventListener('change', handleToggle);
+}
+if (mobileAnimationToggle) {
+    mobileAnimationToggle.addEventListener('change', handleToggle);
 }
 
 // --- Dynamic CV Download Name ---
@@ -167,4 +180,29 @@ if (cvDownloadBtn) {
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const dd = String(today.getDate()).padStart(2, '0');
     cvDownloadBtn.download = `katsikogiannis_cv_${yyyy}_${mm}_${dd}.pdf`;
+}
+
+// --- Mobile Navigation Toggle ---
+const menuBtn = document.querySelector('.menu-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+const overlay = document.querySelector('.overlay');
+const mobileLinks = document.querySelectorAll('.mobile-nav .nav-links a');
+
+if (menuBtn && mobileNav && overlay) {
+    const toggleMenu = () => {
+        mobileNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    };
+
+    menuBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
 }

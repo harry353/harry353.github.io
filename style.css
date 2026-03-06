@@ -515,7 +515,161 @@ body.animations-disabled .blob {
     opacity: 0 !important;
 }
 
+
 body.animations-disabled #star-canvas {
     opacity: 0.05;
     /* Fade to almost black, just very subtle stars remaining */
+}
+
+/* 
+   List View Layout (AMUSE Page)
+*/
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+}
+
+.list-card {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: var(--transition-smooth);
+}
+
+.list-card:hover {
+    border-color: var(--glass-border);
+    box-shadow: none;
+    transform: none;
+}
+
+.list-card-image {
+    flex: 0 0 280px;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.list-card-content {
+    flex: 1;
+}
+
+.list-card-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-primary);
+}
+
+.list-card-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* 
+   Mobile Navigation 
+*/
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1002;
+    padding: 0.5rem;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(5, 11, 20, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    transition: var(--transition-smooth);
+    border-left: 1px solid var(--glass-border);
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav .nav-links {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobile-nav .nav-links a {
+    font-size: 1.2rem;
+}
+
+.mobile-nav .toggle-container {
+    margin-left: 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-fast);
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (max-width: 960px) {
+    .glass-header .nav-links {
+        display: none !important;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-nav .nav-links {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .list-card {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .list-card-image {
+        width: 100%;
+        flex: none;
+        margin-bottom: 1.5rem;
+    }
 }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AMUSE-ing Scenarios - Using the Astrophysical Multipurpose Software Environment (AMUSE) to simulate astrophysics ideas.">
+    <title>AMUSE-ing Scenarios | Haris Katsikogiannis</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23050b14%22/><text y=%2272%22 x=%2212%22 font-size=%2260%22 font-family=%22system-ui, sans-serif%22 font-weight=%22900%22><tspan fill=%22%23e2e8f0%22>H</tspan><tspan fill=%22%23808cf8%22>K</tspan></text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Google+Sans:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="star-canvas"></canvas>
+    <div class="blob-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">H<span>K</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#hero">About</a></li>
+                    <li><a href="index.html#research">Research Interests</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#extracurriculars">Extracurriculars</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="toggle-container">
+                        <span class="toggle-label">Background Animations</span>
+                        <label class="switch">
+                            <input type="checkbox" id="animation-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </li>
+                </ul>
+                <button class="menu-btn" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="overlay"></div>
+    <nav class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="index.html#hero">About</a></li>
+            <li><a href="index.html#research">Research Interests</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#extracurriculars">Extracurriculars</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="toggle-container">
+                <span class="toggle-label">Background Animations</span>
+                <label class="switch">
+                    <input type="checkbox" id="mobile-animation-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section class="projects-section" style="padding-top: 120px;">
+            <div class="container">
+                <h1 class="section-title">AMUSE-ing Scenarios</h1>
+                <p
+                    style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: -1.5rem auto 4rem auto; font-size: 1.1rem;">
+                    Exploring the universe through AMUSE (Astrophysical Multipurpose Software Environment)
+                    simulations! Fun creative pastime for the whole family.
+                </p>
+
+                <div class="list-view">
+                    <!-- Scenario 1: It Takes >2 to Tango -->
+                    <article class="list-card">
+                        <div class="list-card-image">
+                            💃
+                        </div>
+                        <div class="list-card-content">
+                            <h3>It Takes >2 to Tango</h3>
+                            <p>
+                                What happens to a star system's planets after it becomes a neutron star? If they survive
+                                the explosion and stay bound, things can get... messy.
+                                In this simulation, we look at a "dance" involving two neutron stars and a gas giant
+                                planet.
+                            </p>
+                            <p>
+                                One neutron star is orbited by the planet, but there's a second neutron star lurking
+                                nearby acting as a "perturber."
+                                This setup triggers something called <strong><a
+                                        href="https://en.wikipedia.org/wiki/Kozai_mechanism" target="_blank"
+                                        rel="noopener noreferrer"
+                                        style="color: var(--accent-primary); text-decoration: underline;">Lidov-Kozai
+                                        cycles</a></strong>: the outer
+                                neutron star's gravity constantly tugs on the planet's orbit, causing
+                                it to stretch and tilt wildly.
+                            </p>
+                            <p>
+                                Eventually, the orbit becomes so eccentric that the planet is practically thrown into
+                                its host neutron star.
+                                This cosmic collision doesn't just end the planet; it could be the very origin of the
+                                <strong>accretion disks</strong> we observe around neutron stars!
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Want to connect?</h2>
+                <p>Feel free to reach out for collaborations or just a friendly chat.</p>
+                <a href="mailto:haris.katsik@gmail.com" class="btn btn-primary"
+                    style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Get in Touch
+                </a>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://github.com/harry353" class="social-link"
+                        style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/haris-katsikogiannis-a5a2321a0/" class="social-link"
+                        style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2026 Haris Katsikogiannis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
