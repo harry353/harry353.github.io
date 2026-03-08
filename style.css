@@ -550,17 +550,22 @@ body.animations-disabled #star-canvas {
     transform: none;
 }
 
-.list-card-image {
-    flex: 0 0 280px;
-    height: 100%;
-    min-height: 200px;
+.list-card-video {
+    flex: 0 0 400px;
+    aspect-ratio: 16 / 9;
     border-radius: 12px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.list-card-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .list-card-content {
@@ -667,7 +672,7 @@ body.animations-disabled #star-canvas {
         text-align: center;
     }
 
-    .list-card-image {
+    .list-card-video {
         width: 100%;
         flex: none;
         margin-bottom: 1.5rem;
