@@ -30,7 +30,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -297,13 +296,13 @@ h3,
     border-radius: 20px;
     overflow: hidden;
     backdrop-filter: blur(20px);
-    transition: var(--transition-smooth);
 }
 
 .glass-card:hover {
     transform: translateY(-8px);
     border-color: rgba(15, 23, 42, 0.1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .project-image {
@@ -541,13 +540,13 @@ body.animations-disabled #star-canvas {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    transition: var(--transition-smooth);
 }
 
 .list-card:hover {
     border-color: var(--glass-border);
     box-shadow: none;
     transform: none;
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .list-card-video {
